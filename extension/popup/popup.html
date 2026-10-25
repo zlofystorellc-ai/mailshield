@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MailShield</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand">🛡️ <strong>MailShield</strong></div>
+    <label class="switch" title="Protection on/off">
+      <input type="checkbox" id="enabled"><span class="slider"></span>
+    </label>
+  </header>
+
+  <section class="status" id="status"></section>
+
+  <section class="grid" aria-label="Statistics">
+    <div><b id="s-scanned">0</b><span data-i18n="scanned">Emails scanned</span></div>
+    <div><b id="s-warnings">0</b><span data-i18n="warnings">Warnings</span></div>
+    <div><b id="s-blocked">0</b><span data-i18n="blocked">Threats blocked</span></div>
+    <div><b id="s-reports">0</b><span data-i18n="reports">Reports made</span></div>
+  </section>
+
+  <section class="settings">
+    <label class="line"><span data-i18n="language">Language</span>
+      <select id="language"><option value="en">English</option><option value="hi">Hinglish</option></select>
+    </label>
+    <label class="line"><span data-i18n="cloud">Cloud protection</span><input type="checkbox" id="consented"></label>
+    <label class="line"><span data-i18n="ai">AI analysis (optional)</span><input type="checkbox" id="aiEnabled"></label>
+  </section>
+
+  <section class="lists">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-allow" class="active" data-type="allow" data-i18n="allowlist">Allowlist</button>
+      <button role="tab" id="tab-block" data-type="block" data-i18n="blocklist">Blocklist</button>
+    </div>
+    <form id="list-form">
+      <input id="list-input" placeholder="example.com" aria-label="Domain" autocomplete="off">
+      <button type="submit" data-i18n="add">Add</button>
+    </form>
+    <div class="error" id="list-error" role="alert"></div>
+    <ul id="list-items"></ul>
+  </section>
+
+  <footer>
+    <a href="#" id="privacy" data-i18n="privacy">Privacy policy</a>
+    <a href="#" id="onboarding" data-i18n="about">What data is sent?</a>
+    <button id="delete" class="danger" data-i18n="delete">Delete my data</button>
+  </footer>
+
+  <script src="../config.js"></script>
+  <script src="../lib/i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
