@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MailShield Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <section id="login" class="login">
+    <form id="login-form" class="card">
+      <h1>🛡️ MailShield Admin</h1>
+      <label for="secret">Admin secret</label>
+      <input id="secret" type="password" autocomplete="current-password" required>
+      <button type="submit" class="primary">Sign in</button>
+      <p class="error" id="login-error" role="alert"></p>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <header>
+      <strong>🛡️ MailShield Admin</strong>
+      <nav role="tablist">
+        <button data-view="dashboard" class="active">Dashboard</button>
+        <button data-view="clusters">Clusters</button>
+        <button data-view="signatures">Signatures</button>
+        <button data-view="feedback">False alarms</button>
+        <button data-view="blocklist">Blocklist</button>
+        <button data-view="held">Held reports</button>
+        <button data-view="verified">Verified senders</button>
+      </nav>
+      <button id="logout" class="ghost">Sign out</button>
+    </header>
+    <main id="view"></main>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>
