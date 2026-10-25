@@ -1,0 +1,10 @@
+{
+  "name": "scam_signatures_embedding",
+  "type": "vectorSearch",
+  "definition": {
+    "fields": [
+      { "type": "vector", "path": "centroidEmbedding", "numDimensions": 256, "similarity": "cosine" },
+      { "type": "filter", "path": "status" }
+    ]
+  }
+}
