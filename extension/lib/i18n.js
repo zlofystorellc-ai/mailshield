@@ -1,0 +1,88 @@
+/* UI strings: English (en) and Hinglish (hi). Used by content script, popup and onboarding. */
+(function (g) {
+  'use strict';
+  const MS = (g.MailShield = g.MailShield || {});
+
+  const STRINGS = {
+    en: {
+      safe: 'MailShield: no threats found',
+      checking: 'MailShield is checking this email…',
+      localOnly: 'local check',
+      warnTitle: 'Be careful — this email looks suspicious',
+      blockTitle: 'Dangerous email — MailShield blocked its links',
+      why: 'Why it was flagged',
+      harmTitle: 'What harm can happen',
+      linksGuarded: 'Links in this email will ask for confirmation before opening.',
+      linksBlocked: 'Links in this email are blocked for your safety.',
+      fp: 'This is safe (false alarm)',
+      tp: 'Correctly flagged',
+      report: 'Report as scam',
+      comment: 'Add a comment (optional)',
+      send: 'Send',
+      thanks: 'Thanks for the feedback!',
+      queued: 'Saved — it will be sent when MailShield is back online.',
+      needCloud: 'Turn on cloud protection in the MailShield popup to send feedback.',
+      confirmTitle: 'Open this link?',
+      confirmBody: 'MailShield found warning signs in this email.',
+      destination: 'This link goes to',
+      cancel: 'Cancel',
+      openLink: 'Open link',
+      interTitle: 'MailShield stopped a dangerous link',
+      goBack: 'Go back (recommended)',
+      openAnyway: 'I understand the risk, open anyway',
+      confirmRisk: 'I understand this site may steal my money, passwords or data, and I still want to open it.',
+      openNow: 'Open the link',
+      reportTitle: 'Report this email as a scam',
+      reportIntro: 'Your report helps protect every MailShield user from similar emails.',
+      category: 'What kind of scam is it?',
+      consent: 'The text of this email will be sent to MailShield for analysis. Personal details will be removed.',
+      preview: 'Preview of what will be sent',
+      submitReport: 'Send report',
+      reported: 'Reported. This sender is now blocked for you, and similar emails will be flagged for everyone once confirmed.',
+      scoreLabel: 'Risk score',
+    },
+    hi: {
+      safe: 'MailShield: koi khatra nahi mila',
+      checking: 'MailShield is email ko check kar raha hai…',
+      localOnly: 'local check',
+      warnTitle: 'Saavdhaan — yeh email suspicious lag raha hai',
+      blockTitle: 'Khatarnaak email — MailShield ne iske links block kiye',
+      why: 'Kyun flag kiya gaya',
+      harmTitle: 'Kya nuksaan ho sakta hai',
+      linksGuarded: 'Is email ke links kholne se pehle aapse poocha jaayega.',
+      linksBlocked: 'Aapki suraksha ke liye is email ke links block hain.',
+      fp: 'Yeh safe hai (galat alarm)',
+      tp: 'Sahi flag kiya',
+      report: 'Scam report karein',
+      comment: 'Comment likhein (optional)',
+      send: 'Bhejein',
+      thanks: 'Feedback ke liye shukriya!',
+      queued: 'Save ho gaya — MailShield online aate hi bhej diya jaayega.',
+      needCloud: 'Feedback bhejne ke liye popup mein cloud protection ON karein.',
+      confirmTitle: 'Kya yeh link kholna hai?',
+      confirmBody: 'MailShield ko is email mein khatre ke sanket mile hain.',
+      destination: 'Yeh link yahan jaata hai',
+      cancel: 'Ruko / Cancel',
+      openLink: 'Link kholo',
+      interTitle: 'MailShield ne ek khatarnaak link roka',
+      goBack: 'Wapas jaayein (recommended)',
+      openAnyway: 'Mujhe khatra pata hai, phir bhi kholna hai',
+      confirmRisk: 'Mujhe pata hai yeh site mere paise, password ya data chura sakti hai, phir bhi main ise kholna chahta/chahti hoon.',
+      openNow: 'Link kholo',
+      reportTitle: 'Is email ko scam report karein',
+      reportIntro: 'Aapki report se sabhi MailShield users aise emails se bachenge.',
+      category: 'Yeh kis tarah ka scam hai?',
+      consent: 'Is email ka text analysis ke liye MailShield ko bheja jaayega. Personal details hata di jaayengi.',
+      preview: 'Kya bheja jaayega (preview)',
+      submitReport: 'Report bhejein',
+      reported: 'Report ho gaya. Yeh sender ab aapke liye block hai, aur confirm hone par aise emails sabke liye flag honge.',
+      scoreLabel: 'Risk score',
+    },
+  };
+
+  function t(lang, key) {
+    return (STRINGS[lang] && STRINGS[lang][key]) || STRINGS.en[key] || key;
+  }
+
+  MS.i18n = { STRINGS, t };
+})(typeof globalThis !== 'undefined' ? globalThis : self);
