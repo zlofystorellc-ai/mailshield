@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to MailShield</title>
+  <link rel="stylesheet" href="onboarding.css">
+</head>
+<body>
+  <main>
+    <h1>🛡️ Welcome to MailShield</h1>
+    <p class="lead">MailShield checks the emails you open in Gmail for phishing, UPI/bank fraud, OTP scams and dangerous links or attachments.</p>
+
+    <h2>Always on, fully local</h2>
+    <p>Basic checks (fake links, look-alike bank domains, risky attachments, scam wording in English and Hinglish) run <b>inside your browser</b>. Nothing leaves your computer for these.</p>
+
+    <h2>Optional: cloud protection</h2>
+    <p>With your permission, MailShield also checks links against Google Safe Browsing, VirusTotal and URLhaus, and warns you about scams other users have reported. For each email you open, it sends:</p>
+    <ul>
+      <li>the sender's address and display name, and the subject line (stored only as a hash);</li>
+      <li>the links in the email and attachment <i>file names</i> (never the files);</li>
+      <li>a short, normalized excerpt of the text with amounts, numbers, dates, names, phone numbers, emails, UPI IDs and account numbers removed;</li>
+      <li>the local risk score and reasons.</li>
+    </ul>
+    <p>MailShield does <b>not</b> store the body of the emails you read. Scan records (domains, hashes, score) are deleted automatically after 90 days.</p>
+
+    <h2>When you report a scam</h2>
+    <p>Only if you press <b>Report as scam</b> and tick the consent box, the email's text is sent <b>after personal details are removed</b> on your computer (account/card numbers, phone numbers, emails, UPI IDs, OTP codes, PAN/Aadhaar, and your own name/email).</p>
+
+    <h2>Your control</h2>
+    <p>You get an anonymous install ID — no Google account access, no sign-in. You can switch cloud protection off or delete all your data at any time from the MailShield popup.</p>
+
+    <div class="choice">
+      <label><input type="checkbox" id="agree"> I have read this and agree to send the data described above for cloud protection.</label>
+      <div class="buttons">
+        <button id="accept" class="primary" disabled>Enable cloud protection</button>
+        <button id="local">Use local checks only</button>
+      </div>
+      <p id="done" role="status"></p>
+    </div>
+
+    <p class="small"><a href="#" id="privacy">Read the full privacy policy</a></p>
+  </main>
+  <script src="../config.js"></script>
+  <script src="onboarding.js"></script>
+</body>
+</html>
